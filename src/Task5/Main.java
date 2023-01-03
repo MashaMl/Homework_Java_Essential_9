@@ -7,7 +7,7 @@ class Factory <T> {
         ONE, TWO, THREE
     }
 
-    public Factory createFactory(Types types) {
+    public Factory factoryMethod(Types types) {
         Factory<T> factory = new Factory<>();
         switch (types) {
             case ONE:
@@ -44,9 +44,9 @@ public class Main {
         Factory<Integer> factory1 = new Factory<>();
         Factory<String> factory2 = new Factory();
         Factory<Double> factory3 = new Factory();
-        factory1.createFactory(Factory.Types.ONE);
-        factory2.createFactory(Factory.Types.TWO);
-        factory3.createFactory(Factory.Types.THREE);
+        factory1.factoryMethod(Factory.Types.ONE);
+        factory2.factoryMethod(Factory.Types.TWO);
+        factory3.factoryMethod(Factory.Types.THREE);
         factory1.setElement(12);
         factory2.setElement("String");
         factory3.setElement(3.2);
