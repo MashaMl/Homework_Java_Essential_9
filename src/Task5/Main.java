@@ -1,14 +1,14 @@
 package Task5;
 
 
-class Factory <T> {
+class MyClass <T> {
     T element;
     public enum Types {
         ONE, TWO, THREE
     }
 
-    public Factory factoryMethod(Types types) {
-        Factory<T> factory = new Factory<>();
+    public MyClass factoryMethod(Types types) {
+        MyClass<T> factory = new MyClass<>();
         switch (types) {
             case ONE:
                 factory = new Factory1();
@@ -35,18 +35,18 @@ class Factory <T> {
         System.out.println(element);
     }
 }
-class Factory1 extends Factory{}
-class Factory2 extends Factory{}
-class Factory3 extends Factory{}
+class Factory1 extends MyClass{}
+class Factory2 extends MyClass{}
+class Factory3 extends MyClass{}
 
 public class Main {
     public static void main(String[] args) {
-        Factory<Integer> factory1 = new Factory<>();
-        Factory<String> factory2 = new Factory();
-        Factory<Double> factory3 = new Factory();
-        factory1.factoryMethod(Factory.Types.ONE);
-        factory2.factoryMethod(Factory.Types.TWO);
-        factory3.factoryMethod(Factory.Types.THREE);
+        MyClass<Integer> factory1 = new MyClass<>();
+        MyClass<String> factory2 = new MyClass<>();
+        MyClass<Double> factory3 = new MyClass<>();
+        factory1.factoryMethod(MyClass.Types.ONE);
+        factory2.factoryMethod(MyClass.Types.TWO);
+        factory3.factoryMethod(MyClass.Types.THREE);
         factory1.setElement(12);
         factory2.setElement("String");
         factory3.setElement(3.2);
